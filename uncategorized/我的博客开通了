@@ -21,7 +21,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="赵佳玮，neuer,正在努力进化中">
+  <meta name="description" content="河中的上龙门去，不叹江湖岁月深">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的博客开通了">
 <meta property="og:url" content="zhaojiawei.group&#x2F;uncategorized&#x2F;%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86">
 <meta property="og:site_name" content="佳玮的学习笔记">
-<meta property="og:description" content="赵佳玮，neuer,正在努力进化中">
+<meta property="og:description" content="河中的上龙门去，不叹江湖岁月深">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-11-21T12:06:53.847Z">
 <meta name="twitter:card" content="summary">
@@ -143,6 +143,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
 
   </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Zeitplan</a>
+
+  </li>
   </ul>
 
 </nav>
@@ -172,9 +177,9 @@
     <link itemprop="mainEntityOfPage" href="zhaojiawei.group/uncategorized/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="赵佳玮">
-      <meta itemprop="description" content="赵佳玮，neuer,正在努力进化中">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="熊伟">
+      <meta itemprop="description" content="河中的上龙门去，不叹江湖岁月深">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -196,6 +201,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/uncategorized/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/uncategorized/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -229,6 +248,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -258,8 +278,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">赵佳玮</p>
-  <div class="site-description" itemprop="description">赵佳玮，neuer,正在努力进化中</div>
+    <img class="site-author-image" itemprop="image" alt="熊伟"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">熊伟</p>
+  <div class="site-description" itemprop="description">河中的上龙门去，不叹江湖岁月深</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -301,12 +323,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">赵佳玮</span>
+  <span class="author" itemprop="copyrightHolder">熊伟</span>
 </div>
   <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Design – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  <div class="theme-info">Design – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -357,6 +379,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'VwArDcYlTUTmkpTFS6DO8z1K-gzGzoHsz',
+    appKey: 'ADkGxmxeHahrQqnhKMEbDYbt',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

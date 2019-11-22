@@ -21,7 +21,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -46,12 +46,12 @@
   };
 </script>
 
-  <meta name="description" content="赵佳玮，neuer,正在努力进化中">
+  <meta name="description" content="河中的上龙门去，不叹江湖岁月深">
 <meta property="og:type" content="website">
 <meta property="og:title" content="佳玮的学习笔记">
 <meta property="og:url" content="zhaojiawei.group&#x2F;archives&#x2F;2019&#x2F;11&#x2F;index.html">
 <meta property="og:site_name" content="佳玮的学习笔记">
-<meta property="og:description" content="赵佳玮，neuer,正在努力进化中">
+<meta property="og:description" content="河中的上龙门去，不叹江湖岁月深">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 
@@ -140,6 +140,11 @@
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Zeitplan</a>
 
   </li>
   </ul>
@@ -239,8 +244,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">赵佳玮</p>
-  <div class="site-description" itemprop="description">赵佳玮，neuer,正在努力进化中</div>
+    <img class="site-author-image" itemprop="image" alt="熊伟"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">熊伟</p>
+  <div class="site-description" itemprop="description">河中的上龙门去，不叹江湖岁月深</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -282,12 +289,12 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">赵佳玮</span>
+  <span class="author" itemprop="copyrightHolder">熊伟</span>
 </div>
   <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Design – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.5.0
+  <div class="theme-info">Design – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -338,6 +345,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'VwArDcYlTUTmkpTFS6DO8z1K-gzGzoHsz',
+    appKey: 'ADkGxmxeHahrQqnhKMEbDYbt',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
