@@ -366,10 +366,10 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     avatar: 'mm',
     meta: guest,
     pageSize: '10' || 10,
-    visitor: false,
+    visitor: true,
     lang: '' || 'zh-cn',
     path: location.pathname,
-    recordIP: false,
+    recordIP: true# Whether to record the commenter IP,
     serverURLs: ''
   });
 }, window.Valine);

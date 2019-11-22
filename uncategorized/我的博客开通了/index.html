@@ -201,6 +201,13 @@
             </span>
 
           
+            <span id="/uncategorized/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%BC%80%E9%80%9A%E4%BA%86/" class="post-meta-item leancloud_visitors" data-flag-title="我的博客开通了" title="Aufrufe">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Aufrufe: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -400,10 +407,10 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     avatar: 'mm',
     meta: guest,
     pageSize: '10' || 10,
-    visitor: false,
+    visitor: true,
     lang: '' || 'zh-cn',
     path: location.pathname,
-    recordIP: false,
+    recordIP: true# Whether to record the commenter IP,
     serverURLs: ''
   });
 }, window.Valine);
