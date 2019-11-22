@@ -46,30 +46,34 @@
   };
 </script>
 
-  <meta name="description" content="河中的上龙门去，不叹江湖岁月深">
-<meta property="og:type" content="website">
-<meta property="og:title" content="佳玮的学习笔记">
-<meta property="og:url" content="zhaojiawei.group&#x2F;index.html">
+  <meta name="description" content="title: 流形学习之简介  记得前几天在汇报时，讲到LLE降维算法时，洋洋洒洒讲了一大堆公式推导，之后老师问了一个很实在的问题：什么是流形，当时支支吾吾说了半天，都没说到点上，后来查阅了一些相关资料，现在总结如下。 前面那篇文章已经介绍过如何用主成分分析降维——它可以在减少数据集特征的同时，保留数据点间的必要关系。虽然 PCA 是一个灵活、快速且容易解释的算法，但是它对存在非线性关系的数据集的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流形学习">
+<meta property="og:url" content="zhaojiawei.group&#x2F;uncategorized&#x2F;%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0&#x2F;index.html">
 <meta property="og:site_name" content="佳玮的学习笔记">
-<meta property="og:description" content="河中的上龙门去，不叹江湖岁月深">
+<meta property="og:description" content="title: 流形学习之简介  记得前几天在汇报时，讲到LLE降维算法时，洋洋洒洒讲了一大堆公式推导，之后老师问了一个很实在的问题：什么是流形，当时支支吾吾说了半天，都没说到点上，后来查阅了一些相关资料，现在总结如下。 前面那篇文章已经介绍过如何用主成分分析降维——它可以在减少数据集特征的同时，保留数据点间的必要关系。虽然 PCA 是一个灵活、快速且容易解释的算法，但是它对存在非线性关系的数据集的">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190623150503210.png?">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190623151541691.png?">
+<meta property="og:updated_time" content="2019-11-22T12:09:21.284Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190623150503210.png?">
 
-<link rel="canonical" href="zhaojiawei.group/">
+<link rel="canonical" href="zhaojiawei.group/uncategorized/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>佳玮的学习笔记</title>
+  <title>流形学习 | 佳玮的学习笔记</title>
   
 
 
@@ -189,10 +193,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="zhaojiawei.group/uncategorized/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -206,8 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/uncategorized/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">流形学习</a>
+          流形学习
         </h1>
 
         <div class="post-meta">
@@ -253,7 +256,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>title: 流形学习之简介</p>
+        <p>title: 流形学习之简介</p>
 <ol>
 <li>记得前几天在汇报时，讲到LLE降维算法时，洋洋洒洒讲了一大堆公式推导，之后老师问了一个很实在的问题：什么是流形，当时支支吾吾说了半天，都没说到点上，后来查阅了一些相关资料，现在总结如下。</li>
 <li><strong>前面那篇文章已经介绍过如何用主成分分析降维——它可以在减少数据集特征的同时，保留数据点间的必要关系。虽然 PCA 是一个灵活、快速且容易解释的算法，但是它对存在非线性关系的数据集的处理效果并不太好，我们将在后面介绍几个示例。为了弥补这个缺陷，我们选择另外一种方法——流形学习（manifold learning）。流形学习是一种无监督评估器，它试图将一个低维度流形嵌入到一个高维度空间来描述数据集。当你思考流形时，建议你设想有一张纸——一个存在于我们所熟悉的三维世界中的二维物体——它可以从两个维度弯折或卷起。提到流形学习这个术语时，可以把这张纸看成那个嵌入三维空间中二维流形。在三维空间中旋转、重定向或者伸展这张纸，都不会改变它的平面几何特性：这些操作和线性嵌入类似。如果你弯折、卷曲或者弄皱这张纸，它仍然是一个二维流形，但是嵌入到一个三维空间就不再是线性的了。流形学习算法将试图学习这张纸的二维特征，包括将纸弯曲后放入一个三维空间中。</strong></li>
@@ -301,15 +304,18 @@ $$S\left(x^{i}, x^{j}\right)=\exp \left(-\left\|x^{i}-x^{j}\right\|_{2}\right)$$
 <p>参考资料：Python数据科学手册，台大李宏毅机器学习公开课教程。</p>
 </blockquote>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+
       </footer>
+    
   </article>
   
   
@@ -317,12 +323,10 @@ $$S\left(x^{i}, x^{j}\right)=\exp \left(-\left\|x^{i}-x^{j}\right\|_{2}\right)$$
 
   </div>
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
